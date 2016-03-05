@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   resources :blogs
   root 'top#index'
   get 'company/show' => 'company#show'
+  
+  get 'inquiries' => 'inquiries#new' #入力ページ
+  post 'inquiries/confirm' => 'inquiries#confirm' #入力内容確認ページ
+  patch 'inquiries/thanks' => 'inquiries#thanks' #PATCHリクエストに対応 
+  post 'inquiries/thanks' => 'inquiries#thanks' #送信完了ページ
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
